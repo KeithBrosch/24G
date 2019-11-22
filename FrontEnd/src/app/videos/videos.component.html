@@ -1,0 +1,37 @@
+<div class="videos">
+  <div class="video-body clearfix">
+    <div class="active-video column">
+      <div class="video-title">
+        {{active-video-title}}
+      </div>
+      <div class="video-embed">
+        <video width="320" height="240" controls>
+          <source src="../assets/videos/who_is_24g.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="video-bottom">
+        <div class="video-views column">
+          {{active-video-views}}
+        </div>
+        <div class="video-buttons column">
+          <div class="buttons-container">
+            <div class="like-button column">
+              <button><img src="../assets/svg/thumbs_up.svg" /></button> {{num-likes}}
+            </div>
+            <div class="dislike-button column">
+              <button><img src="../assets/svg/thumbs_down.svg" /></button> {{num-dislikes}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="videos-list column">
+      <ul>
+        <li>video</li>
+        <li>video</li>
+        <li>video</li>
+      </ul>
+    </div>
+  </div>
+</div>
