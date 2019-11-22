@@ -2,36 +2,42 @@
   <div class="video-body clearfix">
     <div class="active-video column">
       <div class="video-title">
-        {{active-video-title}}
+        <p>{{activeVideoTitle}}</p> 
       </div>
       <div class="video-embed">
-        <video width="320" height="240" controls>
+        <video *ngIf="whoIs" id="video-play" width="320" height="240" controls>
           <source src="../assets/videos/who_is_24g.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <video *ngIf="drones" id="video-play" width="320" height="240" controls>
+          <source src="../assets/videos/future_of_drones.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <video *ngIf="ces" id="video-play" width="320" height="240" controls>
+          <source src="../assets/videos/ces_overview.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </div>
       <div class="video-bottom">
         <div class="video-views column">
-          {{active-video-views}}
+          {{activeVideoViews}} views
         </div>
         <div class="video-buttons column">
           <div class="buttons-container">
             <div class="like-button column">
-              <button><img src="../assets/svg/thumbs_up.svg" /></button> {{num-likes}}
+              <button><img src="../assets/svg/thumbs_up.svg" /></button> {{activeVideoLikes}}
             </div>
             <div class="dislike-button column">
-              <button><img src="../assets/svg/thumbs_down.svg" /></button> {{num-dislikes}}
+              <button><img src="../assets/svg/thumbs_down.svg" /></button> {{activeVideoDislikes}}
             </div>
           </div>
         </div>
       </div>
     </div>
     <div class="videos-list column">
-      <ul>
-        <li>video</li>
-        <li>video</li>
-        <li>video</li>
-      </ul>
+        <div class="row" (click)="updateActiveVideo('WhoIs24G')"><img class="selected" id="whoIs" src="../assets/images/who_is_24g.jpg" /></div>
+        <div class="row" (click)="updateActiveVideo('FutureOfDrones')"><img id="drones" src="../assets/images/future_of_drones.jpg" /></div>
+        <div class="row" (click)="updateActiveVideo('CESOverview')"><img id="ces" src="../assets/images/ces_overview.jpg" /></div>
     </div>
   </div>
 </div>

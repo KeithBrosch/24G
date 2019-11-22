@@ -110,7 +110,7 @@ body {
     clear: both;
 }
 
-@media only screen and (min-width: 770px) {
+@media only screen and (min-width: 768px) {
   .header{
     padding: 40px 50px;
     font-size: 36px;
@@ -131,8 +131,8 @@ body {
 
 /* Videos Styles */
 
-.active-video > *, .videos-list > *{
-  padding: 0 50px;
+.active-video > *{
+  padding: 0 10px;
 }
 
 .video-buttons img{
@@ -150,59 +150,102 @@ body {
   cursor: pointer;
 }
 
+.videos-list{
+  padding: 0;
+  margin: 70px 0 0 0;
+}
 
-@media only screen and (min-width: 1025px) {
-
-  .videos .column {
-    float: left;
+  .videos-list .row {
+    height: auto;
+    cursor: pointer;
   }
 
-  .active-video {
-    width: 70%;
-  }
+.selected {
+  border: 8px solid var(--tfg-orange);
+  cursor: pointer;
+  list-style: none;
+}
 
-  .videos-list {
-    width: 30%;
-  }
+.video-title {
+  font-size: 26px;
+  height: 50px;
+}
 
-  .video-bottom{
-    width: 100%;
-  }
+.videos-list img {
+  width: 90%;
+  height: auto !important;
+  display: block;
+  margin: auto;
+  margin-bottom: 5px;
+}
+
+.video-bottom {
+  width: 100%;
+}
 
   .video-bottom .column {
     float: left;
   }
 
-  .video-views {
-    width: 70%;
-  }
-
-  .videos-buttons {
-    width: 30%;
-  }
-
-  .buttons-container .column {
-    float: left;
-  }
-
-  .like-button, .dislike-button {
-    width: auto;
-    padding-left: 30px;
-  }
+.video-views {
+  width: 50%;
 }
 
-/* Footer Styles */
-.footer img{
-  width: 100px;
+.videos-buttons {
   display: block;
-  margin: auto;
+  margin-left: auto;
+  margin-right: 0;
 }
 
-@media only screen and (min-width: 770px)
-{
-  .footer img {
-    width: 250px;
-    display: block;
-    margin: auto;
+.buttons-container .column {
+  float: left;
+}
+
+.like-button, .dislike-button {
+  width: auto;
+  padding-left: 20px;
+}
+
+@media only screen and (min-width: 600px) {
+    .video-views {
+      width: 75%;
   }
 }
+
+    @media only screen and (min-width: 1025px) {
+      .active-video > * {
+        padding: 0 50px;
+      }
+
+      .videos .column {
+        float: left;
+      }
+
+      .active-video {
+        width: 70%;
+      }
+
+      .videos-list {
+        width: calc(30% - 50px);
+      }
+
+        .videos-list img {
+          width: 75%;
+        }
+    }
+
+    /* Footer Styles */
+
+    .footer img {
+      width: 100px;
+      display: block;
+      margin: auto;
+      margin: 25px auto 25px auto;
+    }
+
+    @media only screen and (min-width: 770px) {
+      .footer img {
+        width: 250px;
+        margin: 50px auto 50px auto;
+      }
+    }
