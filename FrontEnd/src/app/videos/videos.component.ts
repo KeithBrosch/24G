@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 interface Video {
     title: string,
@@ -10,10 +11,19 @@ interface Video {
 }
 
 @Component({
-  selector: 'app-videos',
-  templateUrl: './videos.component.html',
-  styleUrls: ['./videos.component.css']
+    selector: 'app-videos',
+    templateUrl: './videos.component.html',
+    styleUrls: ['./videos.component.css'],
+    animations: [
+        trigger('fade', [
+            transition('void => *', [
+                style({ opacity: 0 }),
+                animate(1000, style({ opacity: 1 }))
+            ])
+        ])
+    ]
 })
+
 export class VideosComponent implements OnInit {
     @ViewChild('activeVideo', { static: true } ) active;
 

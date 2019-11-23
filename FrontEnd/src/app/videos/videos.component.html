@@ -1,15 +1,15 @@
-<div class="videos">
+<div class="videos" @fade>
   <div class="video-body clearfix">
     <div class="active-video column">
       <div class="video-title">
         <p>{{activeVideoTitle}}</p> 
       </div>
       <div class="video-embed">
-        <video *ngIf="whoIs" id="video-play" width="320" height="240" controls (ended)="viewedVideo()">
+        <video *ngIf="whoIs" controls (ended)="viewedVideo()">
           <source src="../assets/videos/who_is_24g.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-        <video *ngIf="drones" id="video-play" width="320" height="240" controls (ended)="viewedVideo()">
+        <video *ngIf="drones"  id="video-play" width="320" height="240" controls (ended)="viewedVideo()">
           <source src="../assets/videos/future_of_drones.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
