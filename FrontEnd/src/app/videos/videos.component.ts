@@ -83,14 +83,17 @@ export class VideosComponent implements OnInit {
         if (this.whoIs) {
             this.WhoIs24G.likes = (parseInt(this.WhoIs24G.likes) + 1).toString();
             this.cookie.set('whoIsLikesCookie', this.WhoIs24G.likes);
+            this.activeVideoLikes = this.cookie.get('whoIsLikesCookie');
         }
         else if (this.drones) {
             this.FutureOfDrones.likes = (parseInt(this.FutureOfDrones.likes) + 1).toString();
             this.cookie.set('dronesLikesCookie', this.FutureOfDrones.likes);
+            this.activeVideoLikes = this.cookie.get('dronesLikesCookie');
         }
         else if (this.ces) {
             this.CESOverview.likes = (parseInt(this.CESOverview.likes) + 1).toString();
             this.cookie.set('cesLikesCookie', this.CESOverview.likes);
+            this.activeVideoLikes = this.cookie.get('cesLikesCookie');
         }
     }
 
@@ -99,14 +102,17 @@ export class VideosComponent implements OnInit {
         if (this.whoIs) {
             this.WhoIs24G.dislikes = (parseInt(this.WhoIs24G.dislikes) + 1).toString();
             this.cookie.set('whoIsDislikesCookie', this.WhoIs24G.dislikes);
+            this.activeVideoDislikes = this.cookie.get('whoIsDislikesCookie');
         }
         else if (this.drones) {
             this.FutureOfDrones.dislikes = (parseInt(this.FutureOfDrones.dislikes) + 1).toString();
             this.cookie.set('dronesDislikesCookie', this.FutureOfDrones.dislikes);
+            this.activeVideoDislikes = this.cookie.get('dronesDislikesCookie');
         }
         else if (this.ces) {
             this.CESOverview.dislikes = (parseInt(this.CESOverview.dislikes) + 1).toString();
             this.cookie.set('cesDislikesCookie', this.CESOverview.dislikes);
+            this.activeVideoDislikes = this.cookie.get('cesDislikesCookie');
         }
     }
 
@@ -115,14 +121,17 @@ export class VideosComponent implements OnInit {
         if (this.whoIs) {
             this.WhoIs24G.views = (parseInt(this.WhoIs24G.views) + 1).toString();
             this.cookie.set('whoIsViewsCookie', this.WhoIs24G.views);
+            this.activeVideoViews = this.cookie.get('whoIsViewsCookie');
         }
         else if (this.drones) {
             this.FutureOfDrones.views = (parseInt(this.FutureOfDrones.views) + 1).toString();
             this.cookie.set('dronesViewsCookie', this.FutureOfDrones.views);
+            this.activeVideoViews = this.cookie.get('dronesViewsCookie');
         }
         else if (this.ces) {
             this.CESOverview.views = (parseInt(this.CESOverview.views) + 1).toString();
             this.cookie.set('cesViewsCookie', this.CESOverview.views);
+            this.activeVideoViews = this.cookie.get('cesViewsCookie');
         }
     }
 
